@@ -9,7 +9,9 @@ strip_pin = Pin(28, Pin.OUT)
 
 my_strip = NeoPixel(strip_pin, num_pixels)
 
-my_strip.fill((100, 100, 100))
+# my_strip[0] = color
+# my_strip[1] = (0, 255, 0)
+my_strip.fill(color)
 my_strip.write()
 
 #while True:
