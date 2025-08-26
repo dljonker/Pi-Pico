@@ -1,7 +1,7 @@
 from machine import Pin
 from neopixel import NeoPixel
 from machine import Pin, SoftI2C
-import ssd1306
+import ssd1306 # type: ignore
 from time import sleep
 import dht
 
@@ -21,7 +21,7 @@ strip_pin = Pin(28, Pin.OUT)
 my_strip = NeoPixel(strip_pin, num_pixels)
 
 my_strip.fill((100, 100, 100))
-my_strip.write()
+# my_strip.write()
 
 while True:
   try:
@@ -42,6 +42,3 @@ while True:
     oled.show()
   except OSError as e:
     print('Failed to read sensor.')
-
-#(RED, GREEN, BLUE)
-# 0 to 255 - Brightness
