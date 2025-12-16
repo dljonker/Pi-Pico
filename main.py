@@ -23,7 +23,7 @@ oled_height = 64
 oled = ssd1306.SSD1306_I2C(oled_width, oled_height, i2c)
 
 num_pixels = 10
-color = (0, 0, 0)
+color = (255, 0, 0)
 
 strip_pin = Pin(28, Pin.OUT)
 
@@ -35,23 +35,23 @@ my_strip.write()
 
 while True:
   try:
-    sensor.measure()
-    temp = sensor.temperature()
-    temp_string = str(temp)
-    hum = sensor.humidity()
-    hum_string = str(hum)
+    #sensor.measure()
+    #temp = sensor.temperature()
+    #temp_string = str(temp)
+    #hum = sensor.humidity()
+    #hum_string = str(hum)
     pressure=bmp.pressure
     pressure_string = str(pressure)
     temperature=bmp.temperature
     #temperature_string = str(temperature)
-    print('Temperature: %3.1f C' %temp)
-    print('Humidity: %3.1f %%' %hum)
+    #print('Temperature: %3.1f C' %temp)
+    #print('Humidity: %3.1f %%' %hum)
     print("Temperature: {} C".format(temperature))
     print("Pressure: {} Pa".format(pressure))
     oled.text('Temperatura:', 0, 0)
-    oled.text(temp_string, 0, 10)
+    #oled.text(temp_string, 0, 10)
     oled.text('Umidade:', 0, 20)
-    oled.text(hum_string, 0, 30)
+    #oled.text(hum_string, 0, 30)
     oled.text('Pressao:', 0, 40)
     oled.text(pressure_string, 0, 50)
     oled.show()

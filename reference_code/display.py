@@ -1,5 +1,5 @@
 from machine import Pin, SoftI2C
-import ssd1306
+import ssd1306 # type: ignore
 from time import sleep
 
 #You can choose any other combination of I2C pins
